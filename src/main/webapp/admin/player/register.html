@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script
+	src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+
+<title></title>
+</head>
+<body>
+	<div id="player">
+		<div>
+			<a>账号</a> <input class="input" v-model="paccount" />
+		</div>
+		<div>
+			<a>密码</a> <input class="input" v-model="ppassword" />
+		</div>
+		<div>
+			<input type="checkbox"> <a>我已阅读并同意《用户条款》</a>
+
+		</div>
+		<button @click="register">登录</button>
+		<button>关闭</button>
+	</div>
+</body> 
+</html>
+<script>
+	Vue.http.options.emulateJSON = true;
+	var player = new Vue({
+		el : '#player',  	
+		data : {
+			paccount:"",
+			ppassword:""
+		},
+		methods : {
+			register: function() {
+				this.$http.post('/uniongame/admin/player/signin', {paccount:this.paccount,ppassword:this.ppassword}).then(function(res) {
+				});
+				alert(this.paccount);
+				alert(this.ppassword);
+			}
+		}
+	})
+	
+</script>

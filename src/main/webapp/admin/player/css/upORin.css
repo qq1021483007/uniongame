@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.signin {
+	width: 800px;
+	height: 336px;
+	border: 0px white solid;
+	display: flex;
+}
+
+.left {
+	width: 70px;
+	height: 336px;
+	background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.right {
+	width: 830px;
+	height: 336px;
+	border: 0px white solid;
+}
+
+.leftdiv {
+	width: 70px;
+	height: 168px;
+	border: 0px white solid;
+	text-align: center;
+}
+
+.aa {
+	font-size: 25px;
+	color: wheat;
+	text-decoration: none;
+	line-height: 150px;
+}
+
+.input{
+	width: 230px;
+	height: 20px;
+	font-size: 18px;
+	line-height: 20px;
+	border: 0px ;
+margin-bottom: 25px;
+	
+}

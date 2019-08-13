@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="css/upORin.css">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script
+	src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+
+</head>
+<body>
+	<div class="signin" >
+		<div class="left">
+			<div id="asign" class="leftdiv">
+				<a class="aa" href="signin.html"" >登录</a>
+			</div>
+			<div id="asign" class="leftdiv">
+				<a class="aa" href="signin.html">注册</a>
+			</div>
+		</div>
+		<div id="player" class="right">
+			<div>
+				<a>账号</a> <input class="input" v-model="paccount"/>
+			</div>
+			<div>
+				<a>密码</a> <input class="input"  v-model="ppassword" />
+			</div>
+			<button @click="load">登录</button>
+			<button>关闭</button>
+
+		</div>
+
+	</div>
+</body>
+</html>
+<script>
+Vue.http.options.emulateJSON = true;
+var player = new Vue({
+	el : '#player',  	
+	data : {
+		paccount:"",
+		ppassword:""
+	},
+	methods : {
+		load: function() {
+			this.$http.post('/uniongame/admin/player/singup', {paccount:this.paccount,ppassword:this.ppassword}).then(function(res) {
+			});
+		}
+	}
+})
+</script>
+
+
